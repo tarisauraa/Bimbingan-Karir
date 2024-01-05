@@ -3,3 +3,4 @@ numpy==1.24.3
 imbalanced-learn==0.10.1
 scikit-learn==1.0.2
 streamlit==1.29.0
+xgboost==2.0.3
