@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 import time
 import pickle
-
+from xgboost import XGBClassifier
 
 with open("HeartDisease/hungarian.data", encoding='Latin1') as file:
   lines = [line.strip() for line in file]
@@ -87,7 +87,7 @@ y = df_clean['target']
 smote = SMOTE(random_state=42)
 X, y = smote.fit_resample(X, y)
 
-model = pickle.load(open("rf.pkl", 'rb'))
+model = pickle.load(open("xgb.pkl", 'rb'))
 
 y_pred = model.predict(X)
 accuracy = accuracy_score(y, y_pred)
